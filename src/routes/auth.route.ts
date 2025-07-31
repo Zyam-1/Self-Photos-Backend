@@ -1,10 +1,12 @@
-import { Router, Request, Response } from "express";
+import { Router } from "express";
+import { getProfile, login, register } from "../controllers/auth.controller";
+import { protect } from "../middleware/auth.middleware";
 
-const router: Router = Router();
+const userRouter: Router = Router();
 
-router.get("/", (req: Request, res: Response) => {
-    res.send("Hello");
-});
+userRouter.post("/register", register);
+userRouter.post("/login", login);
+userRouter.get("/profile", protect, getProfile)
 
 
-export default router;
+export default userRouter;
