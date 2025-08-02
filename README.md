@@ -145,8 +145,8 @@ curl -H "Authorization: Bearer <jwt_token>" \
 ## 🔧 Configuration Options
 
 ### Multer Configuration
-- **File Size Limit**: 5MB per file (configurable)
-- **Allowed Types**: Images (jpg, jpeg, png, gif, webp)
+- **File Size Limit**: 50MB per file (configurable)
+- **Allowed Types**: Images (jpg, png)
 - **Storage**: Disk storage with unique filenames
 - **Naming Convention**: `Date.now().toString(36) + Math.random().toString(36).substr(2)-file.originalName}`
 
